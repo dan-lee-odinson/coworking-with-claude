@@ -59,6 +59,8 @@ It turns out **Cowork itself runs in a virtualized environment**, so disabling t
 
 ## Project 2 — Smart Ring Affiliate Blog (My "[Skateboard](https://medium.com/@byrnereese/the-skateboard-mindset-in-product-development-ddf3409d5e98) Project") 
 
+**Live Project:** [Smart Rings Reviews](https://www.smartringsreviews.com)
+
 **Goal:** an automated affiliate marketing blog covering smart rings (Oura, Ultrahuman, RingConn, Samsung Galaxy Ring, Evie, Amazfit Helio, Circular, BKWAT). Posts are researched, drafted, SEO-optimized, and scheduled to a live WordPress site without me writing each one by hand.
 
 **Why this was the right second project:** it stretched into territory the first one didn't — multi-step workflows, recurring tasks, autonomous execution, integration with a live external system (WordPress). It forced me to learn how to give Claude *durable* context, not just a one-off prompt. I also want to explore the potential for passive income generation using Claude as an agent.

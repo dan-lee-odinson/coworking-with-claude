@@ -166,6 +166,26 @@ Knowing the difference makes it easier to know which lever to pull when somethin
 - A custom Skill (Claude can scaffold one for you) that encodes your project's voice, structure, and rules
 - A separate image generation tool if your project needs visuals
 
+### Final Results — June 2026 Closeout
+
+This project began as a practical test of the claim that AI agents can create meaningful “passive income” through affiliate marketing with minimal human effort.
+
+The site was successfully built and published. Claude Cowork helped create a repeatable workflow for research, drafting, SEO formatting, WordPress publishing, and post scheduling. The technical experiment worked: an AI-assisted publishing pipeline can be created by a non-programmer with enough prompting, verification, and manual oversight.
+
+The business experiment did not validate the passive-income claim.
+
+Approximate results:
+
+- Spend: ~$300
+- Affiliate earnings: $4.08
+- Net result: -$295.92
+- Revenue recovered: ~1.36% of spend
+- Break-even gap: earnings would have needed to be roughly 73.5x higher just to recover costs
+
+The biggest lesson: AI reduced some production friction, but it did not remove the hard parts of affiliate marketing. Product selection, niche research, trust-building, SEO authority, affiliate program quality, account setup, compliance, debugging, hosting, analytics, and human review still required substantial time.
+
+Conclusion: Agentic AI is useful as a workflow accelerator, but “AI passive income” is a misleading frame. This was not passive income; it was an AI-assisted small publishing business experiment.
+
 ---
 
 ## Next Project Ideas

@@ -71,6 +71,8 @@ It turns out **Cowork itself runs in a virtualized environment**, so disabling t
 
 **Why this was the right second project:** it stretched into territory the first one didn't — multi-step workflows, recurring tasks, autonomous execution, integration with a live external system (WordPress). It forced me to learn how to give Claude *durable* context, not just a one-off prompt. I also want to explore the potential for passive income generation using Claude as an agent.
 
+> 📊 **Detailed build log & data:** This section is the story; the receipts live in the [**Project 2 Detailed Summary**](./smart-ring-blog-skill/PROJECT-SUMMARY.md) inside the [`smart-ring-blog-skill`](./smart-ring-blog-skill) folder. It documents the AWIN and Amazon affiliate **application and acceptance** process, the post-by-post **publishing sprints** with time-spent estimates, a full **operational friction log** (errors, usage limits, context resets, duplicate posts and the redirects that fixed them), and the complete **cost-vs-ROI** breakdown. Account identifiers are anonymized.
+
 ### The Stack
 
 - **Claude Cowork** — orchestrates research, writing, and scheduling
@@ -191,6 +193,8 @@ Approximate results:
 The biggest lesson: AI reduced some production friction, but it did not remove the hard parts of affiliate marketing. Product selection, niche research, trust-building, SEO authority, affiliate program quality, account setup, compliance, debugging, hosting, analytics, and human review still required substantial time.
 
 Conclusion: Agentic AI is useful as a workflow accelerator, but “AI passive income” is a misleading frame. This was not passive income; it was an AI-assisted small publishing business experiment.
+
+> 📄 **Want the granular version?** Every number behind this closeout — affiliate approvals (AWIN: Ultrahuman, BKWAT, Circular, Omni Health Ring; plus Amazon Associates), the sprint-by-sprint schedule, estimated time spent, and the full log of errors, usage limits, and restarts — is documented in the [**Project 2 Detailed Summary**](./smart-ring-blog-skill/PROJECT-SUMMARY.md).
 
 ---
 

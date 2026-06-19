@@ -2,6 +2,8 @@
 
 A Claude Cowork **Skill** that drafts, fact-checks, illustrates, and schedules affiliate blog posts about smart rings (Oura, Ultrahuman, RingConn, Samsung Galaxy Ring, Evie, Amazfit Helio, Circular, BKWAT) to a live WordPress site. Originally built and run against a real affiliate site — published here as a starting template anyone can fork and adapt.
 
+> 📊 **Project results & build log:** Curious how this skill actually performed on the site it was built for? The [**Project 2 Detailed Summary**](./PROJECT-SUMMARY.md) documents the real run — the **AWIN and Amazon affiliate application and acceptance** process, the post-by-post **publishing sprints** with time-spent estimates, an **operational friction log** (errors, usage limits, context resets, duplicate posts and the redirects that fixed them), and the full **cost-vs-ROI** breakdown (short version: ~$300 spent, $4.08 earned). Account identifiers are anonymized. For the higher-level story, see the repo's [root README](../README.md).
+
 ## What this Skill does
 
 When invoked in a Claude Cowork session, it autonomously:
@@ -31,6 +33,7 @@ smart-ring-blog-skill/
 ├── references/
 │   ├── brands.md             # Per-brand vendor info and affiliate-link placeholders
 │   └── fake-domains.md       # Known lookalike domains to avoid linking to
+├── PROJECT-SUMMARY.md        # Real-run results: affiliate setup, sprints, time spent, costs, friction log
 ├── README.md                 # This file
 └── LICENSE                   # MIT
 ```
@@ -56,6 +59,8 @@ You'll need accounts with whichever programs cover the brands you want to recomm
 - Brand-direct programs (Oura, Samsung) where available
 
 Fill in each `{{YOUR_*_LINK}}` placeholder in `references/brands.md` with the real tracking URL once you have it. Leave a placeholder in place if a program is still pending — the skill will flag it during drafting.
+
+> 💡 For a real example of how this affiliate-account stage actually played out — which AWIN programs got approved, in what order, and how Amazon links fit in — see [`PROJECT-SUMMARY.md`](./PROJECT-SUMMARY.md).
 
 ### 3. Set up your WordPress site
 

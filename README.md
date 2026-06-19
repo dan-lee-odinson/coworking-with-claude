@@ -247,7 +247,7 @@ The Project 1 lessons are about **trust** — verify before you act, back up bef
 
 The Project 2 lessons are about **scale** — once you trust the agent, how do you give it durable context, how do you keep it from overwhelming itself, and where does it still fall short?
 
-The Project 3 lessons are about **authorship** — once you trust the agent and can keep it on task, what does it take to actually *ship* something with your name on it? That meant staying in the loop on every build, finding bugs by using the app instead of reading the code, owning the parts no agent can do for you (the store account, the submission, the launch), and standing behind it in public when the feedback came back — the useful and the hostile alike.
+The Project 3 lessons are about **ownership** — once you trust the agent and can keep it on task, what does it take to actually *ship* something with your name on it? That meant staying in the loop on every build, finding bugs by using the app instead of reading the code, owning the parts no agent can do for you (the store account, the submission, the launch), and standing behind it in public when the feedback came back — the useful and the hostile alike.
 
 Project 1 was trust, Project 2 was scale, Project 3 was ownership. You really do need each set before the next one is useful.
 

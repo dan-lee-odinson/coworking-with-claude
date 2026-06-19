@@ -11,7 +11,7 @@ This README is meant for anyone in the same position — interested in AI agents
 
 ## TL;DR
 
-Thirteen things I've learned so far:
+Seventeen things I've learned so far:
 
 1. **Pick a small, recoverable first project.** You will learn more from one mistake you can roll back than from a week of reading guides.
 2. **Verify everything before you act on it** — especially links, file paths, and any system-level command. Confident phrasing is not evidence of correctness.
@@ -26,9 +26,12 @@ Thirteen things I've learned so far:
 11. **Product and niche selection matter more than content volume.** A smart ring affiliate site sounded narrow and monetizable, but choosing the right products, programs, buyer intent, commission structure, and competitive angle required far more research than the hype suggests.
 12. **Revenue takes longer than the AI-content narrative implies.** My approximate spend was $300, while affiliate earnings were $4.08. That does not prove the model can never work, but it does show that profitability is not automatic, immediate, or guaranteed just because AI can produce the site.
 13. **Treat AI side projects as experiments first, businesses second.** The most valuable result was not affiliate income; it was learning how to manage an agentic AI workflow, test automation claims against reality, and document what worked, what failed, and what still required human judgment.
+14. **Shipping is its own skill.** Writing the code is a fraction of the work. Packaging, store assets, a hosted privacy policy, permission justifications, and a review process are the real "last mile" of an app.
+15. **Your role deepens as the project gets more technical.** On the app I moved from director to co-creator and tester — running every build and finding bugs by *using* the thing, not by reading the code.
+16. **Test by clicking, not by reading.** The bugs that mattered (a placeholder on the live privacy page, the live-vs-demo data states, the calendar buttons) only showed up when I used the extension end to end.
+17. **A public launch isn't a warm welcome.** Disclosing AI involvement drew some "AI slop" hostility; the useful signal was the specific domain feedback, which I folded straight into the roadmap.
 
-
-The rest of this README walks through how I learned each of these by building two projects.
+The rest of this README walks through how I learned each of these by building three projects.
 
 ---
 
@@ -145,16 +148,6 @@ I enabled the design skill, brand skill, and every image-related skill I could f
 
 ---
 
-## How the Two Projects Connect
-
-The Project 1 lessons are about **trust** — verify before you act, back up before you change anything, don't confuse confidence with correctness.
-
-The Project 2 lessons are about **scale** — once you trust the agent, how do you give it durable context, how do you keep it from overwhelming itself, and where does it still fall short?
-
-You really do need the first set before the second set is useful.
-
----
-
 ## A Note on How "Memory" Actually Works
 
 A clarification for anyone newer to LLMs than I was: Claude's model doesn't run on your computer's GPU. Inference happens on Anthropic's servers. Two things really are happening locally:
@@ -198,12 +191,74 @@ Conclusion: Agentic AI is useful as a workflow accelerator, but “AI passive in
 
 ---
 
+## Project 3 — Next Pass (My First App)
+
+**Live: [Next Pass on the Chrome Web Store](https://chromewebstore.google.com/detail/next-pass/dffapmipddmkinnogkdkibjoellllhof)**
+
+**Goal:** build a real piece of software from scratch — a lightweight Chrome extension that puts a glanceable countdown to the next visible International Space Station pass right in the toolbar — and take it all the way through the cycle: prototype, test, package, and publish.
+
+**Why this was the right third project:** it's the "build a small app from scratch" idea I floated at the end of Project 2, and it pushed me somewhere the first two projects didn't. Project 1 was a single session. Project 2 was an automated pipeline I mostly *directed*. Project 3 was the first time I was in the loop on every step — scoping features, running every build, finding bugs by using the thing, and owning a public launch with my name on it.
+
+### How it was built — short daily sprints
+
+Instead of one giant "build me an app" prompt, we broke it into small daily sprints, each one a self-contained, testable step. That structure mattered more than any single feature.
+
+- **Day 1 — "Hello, ISS."** Just get a Chrome extension to load at all: a manifest, an icon, and a new-tab page that renders. The entire goal was "does this thing install and show up." It did. That was the win.
+- **Day 2 — the popup widget.** The core idea of the app: click the toolbar icon, see a live countdown to the next pass. Built with placeholder ("mock") pass data so I could design the look — a dark, space-station aesthetic — before wiring in anything real.
+- **Day 3 — share the engine.** Refactored so the popup and a full-screen dashboard both run off one shared rendering file, instead of two copies that drift apart. Added a Settings (Options) page with a "replace my new tab" toggle, saved with Chrome's storage so it sticks between sessions.
+- **By Day 5 — live data.** Wired in the [N2YO](https://www.n2yo.com/) satellite-tracking API so the countdown reflects *real* ISS passes for your location, with a 6-hour cache so it isn't hammering the API, and a graceful fallback to demo data when there's no key, no location, or no network. Added optional address lookup via OpenStreetMap.
+- **Later sprints — the "real app" layer.** A background worker that schedules desktop notifications a few minutes before bright passes; one-click calendar export (Google Calendar add, or an `.ics` download for Outlook/Apple/Thunderbird/Proton); then the v0.6.x packaging push — promo images, screenshots, a hosted privacy policy, permission justifications, and the Chrome Web Store submission itself.
+
+It shipped at **v0.6.1**, published on the Chrome Web Store.
+
+### Testing the app and debugging
+
+This is where my role changed the most. Every sprint ended with me actually *using* the extension, not just reading what Claude wrote:
+
+- Reload the extension at `chrome://extensions/`, click the toolbar icon, confirm the popup renders.
+- Open the full dashboard, flip every setting, confirm both new-tab states behave.
+- Check the live-vs-demo data states, confirm the API key wiring actually pulled real passes, and that the calendar buttons and notifications genuinely fired.
+
+The bugs that mattered showed up *only* by clicking through it, never by reviewing code. The clearest example came at the very end, with the privacy policy. The page looked finished — but on launch the live URL still showed a placeholder contact email. The cause: the repo had two near-identical files (`index.html` and `PRIVACY.html`), the public site is served from `index.html`, and the edit had gone into the *other* one. The only way to catch it was to load the live page and compare it against the repo. That's the Project 1 lesson — *verify everything, confidence isn't correctness* — resurfacing in a brand-new disguise.
+
+### From director to co-creator
+
+In Project 2 I was mostly a **director**: I set the goal, Claude ran the publishing pipeline, and I reviewed the outputs. On Project 3 I was a **co-creator and tester**. I made the product calls (what the popup shows, defaulting the new-tab takeover to *off* so it's not intrusive, what belonged in v1 versus the roadmap). I ran every build myself. I found what was broken by using it. And I owned the parts no agent can do for you — the developer account, the $5 registration fee, the screenshots, the listing copy, and clicking "submit."
+
+Claude wrote the code; I scoped it, tested it, broke it, and decided what shipped. Somewhere in here I also started actually learning Python — not enough to write the app myself yet, but enough to read what was being built and push back when something didn't make sense. That shift, from steering to building, was the whole point of doing a third project.
+
+### Rollout — and a genuinely mixed reception
+
+With the extension live, I posted launch threads to two communities: **r/amateursatellites** and **r/ISS**. I was upfront in both that I'm not a traditional developer, that I'd started learning Python about a month earlier, and that I'd built this with Claude.
+
+The responses split three ways, and all three were worth getting:
+
+- **Practical.** In r/ISS, a moderator's first reply was simply *"where is the link to your actual chrome extension?"* — I'd forgotten to include the install link in the original post. Slightly embarrassing, easily fixed: I apologized and edited the link in. Lesson: the single most important thing in a launch post is the one thing I left out.
+- **Constructive / domain expertise.** In r/amateursatellites, a commenter pointed out that some of the satellites on my "coming soon" list (NOAA weather sats) are decommissioned, and suggested the still-operational Meteor-M satellites instead, citing their own SDR setup. This was the gold. I updated the roadmap, removed the dead satellites, and added Meteor-M. Real hobbyists made the product better.
+- **Hostility.** Also in r/amateursatellites: *"another pile of slop garbage that nobody needed or wanted… programmed by clueless people,"* plus a mocking image reply. The "AI slop" backlash is real, and disclosing that you used AI invites it.
+
+The lesson I took: **a public launch is not a warm reception by default.** Being transparent about AI involvement draws some reflexive hostility you can't do much about. The signal worth keeping is the specific, technical feedback — and on that score the launch did exactly what I wanted, turning strangers' expertise into concrete roadmap changes.
+
+---
+
+## How the Projects Connect
+
+The Project 1 lessons are about **trust** — verify before you act, back up before you change anything, don't confuse confidence with correctness.
+
+The Project 2 lessons are about **scale** — once you trust the agent, how do you give it durable context, how do you keep it from overwhelming itself, and where does it still fall short?
+
+The Project 3 lessons are about **authorship** — once you trust the agent and can keep it on task, what does it take to actually *ship* something with your name on it? That meant staying in the loop on every build, finding bugs by using the app instead of reading the code, owning the parts no agent can do for you (the store account, the submission, the launch), and standing behind it in public when the feedback came back — the useful and the hostile alike.
+
+Project 1 was trust, Project 2 was scale, Project 3 was ownership. You really do need each set before the next one is useful.
+
+---
+
 ## Next Project Ideas
 
 Things I'm considering as the next progression:
 
 - A scheduled daily-briefing skill that pulls news in topics I follow (space launches, robotics, sci-fi releases) and summarizes them
-- Designing and building a small app from scratch with Claude — taking it through the full cycle of prototype, test, package, and deploy — to learn what "shipping software" actually involves
+- ~~Designing and building a small app from scratch with Claude~~ → **Done — that became Project 3 (Next Pass).** Next steps for the app itself: ship the roadmap features (multi-satellite tracking, ARISS radio frequencies, smart-telescope pointing) and see whether the Reddit feedback turns into actual users.
 - Building a small custom MCP server so Cowork can talk to a tool I write myself
 
 Each of these is one step further out — more autonomy, more integration, more places where Project 1's "verify everything" lesson keeps mattering.

@@ -11,7 +11,7 @@ This README is meant for anyone in the same position — interested in AI agents
 
 ## TL;DR
 
-Eight things I've learned so far:
+Thirteen things I've learned so far:
 
 1. **Pick a small, recoverable first project.** You will learn more from one mistake you can roll back than from a week of reading guides.
 2. **Verify everything before you act on it** — especially links, file paths, and any system-level command. Confident phrasing is not evidence of correctness.
@@ -21,6 +21,12 @@ Eight things I've learned so far:
 6. **Specify the tools to use and make sure Claude has permissions to use them.** Tell Claude to "Access Chrome" to use "REST API" rather than just "upload post to website" - it will try every tool in its toolbox and often choose the hardest unless told otherwise.
 7. **Batch autonomous work.** Asking for "10 things at once" crashes the desktop app. Batches of 3–4 run reliably.
 8. **Don't use Claude for image generation.** Use a dedicated image model and bring the result back in.
+9.  **AI can help you build the machine, but it does not create demand.** Claude helped me research, draft, format, publish, and manage a working affiliate site, but traffic, trust, ranking, and conversions still had to be earned.
+10. **“Passive income with AI” is a misleading frame.** This project was not passive. I spent significant time reviewing outputs, debugging issues, setting up accounts, managing WordPress, configuring hosting, checking links, and correcting mistakes.
+11. **Product and niche selection matter more than content volume.** A smart ring affiliate site sounded narrow and monetizable, but choosing the right products, programs, buyer intent, commission structure, and competitive angle required far more research than the hype suggests.
+12. **Revenue takes longer than the AI-content narrative implies.** My approximate spend was $300, while affiliate earnings were $4.08. That does not prove the model can never work, but it does show that profitability is not automatic, immediate, or guaranteed just because AI can produce the site.
+13. **Treat AI side projects as experiments first, businesses second.** The most valuable result was not affiliate income; it was learning how to manage an agentic AI workflow, test automation claims against reality, and document what worked, what failed, and what still required human judgment.
+
 
 The rest of this README walks through how I learned each of these by building two projects.
 
